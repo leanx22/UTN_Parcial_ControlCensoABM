@@ -10,6 +10,7 @@ typedef struct{
 	char nombre[20];
 	int edad;
 	char telefono[15]; //puede cambiar a int?
+	int contadorCensos;
 
 }eCensista;
 
@@ -38,6 +39,28 @@ int imprimirDatosCensista(eCensista* array, int tamanio,int indice);
 /// @param telefono
 /// @return retorna 0(EXITO) o -1(puntero NULL).
 int cargaForzadaCensistas(eCensista* lista,int indice, int legajo, char* nombre, int edad, char* telefono);
+
+/// @brief Esta funcion incrementa el contador de censos en la estructura del respectivo censista
+/// cuyo legajo pide por parametro.
+/// @param lista puntero a lista de censistas.
+/// @param tamanio tamanio de la lista.
+/// @param legajo legajo de quien realizo el censo.
+/// @return retorna 0(EXITO) O -1(PUNTERO null).
+int contadorCensistas(eCensista* lista,int tamanio, int legajo);
+
+/// @brief
+///
+/// @param array
+/// @param tamanio
+/// @return
+int imprimirMejorCensista(eCensista* array,int tamanio);
+
+/// @brief esta funcion inicializa el contador de censos de cada censista a 0.
+///
+/// @param lista
+/// @param tamanio
+/// @return retorna 0(EXITO) o -1(PUNTERO NULL);
+int inicializarCensistas(eCensista* lista, int tamanio);
 
 #ifndef CENSISTA_H_
 #define CENSISTA_H_

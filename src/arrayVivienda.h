@@ -38,7 +38,7 @@ int buscarLibre(eVivienda* array, int tamanio);
 /// @param tamanio tamanio del array.
 /// @param contadorId puntero a variable entera de controlador de IDS.
 /// @return retorna 0(EXITO) o -1 si hay error en validaciones o puntero NULL.
-int altaVivienda(eVivienda* array, int tamanio, int* contadorId);
+int altaVivienda(eVivienda* array,int tamanio, int* contadorId, int*pCensista);
 
 /// @brief Esta funcion ofrece un submenu con el cual se pueden editar
 /// los distintos campos de la estructura.

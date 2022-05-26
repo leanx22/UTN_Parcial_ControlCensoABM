@@ -46,7 +46,7 @@ int buscarLibre(eVivienda* array, int tamanio)
 }
 
 
-int altaVivienda(eVivienda* array,int tamanio,int* contadorId)
+int altaVivienda(eVivienda* array,int tamanio,int* contadorId,int* pCensista)
 {
 	int retorno = -1;
 	int indice;
@@ -79,6 +79,9 @@ int altaVivienda(eVivienda* array,int tamanio,int* contadorId)
 			(*(array+indice)).legajoCensista = bufferlegajo;
 			(*(array+indice)).idVivienda = *contadorId;
 			(*(array+indice)).permiteCarga = 0;
+
+			*pCensista = (*(array+indice)).legajoCensista;
+
 			system("CLS");
 			printf("\n\x1b[32mLA VIVIENDA SE CARGO CORRECTAMENTE. ID: %d\n\x1b[0m", *contadorId);
 			retorno = 0;
@@ -306,3 +309,19 @@ int cargaForzada(eVivienda* array, int lugar,int tamanio, int* contadorId, char*
 	}
 	return retorno;
 }
+
+/*
+int imprimirDatosCompletos(eVivienda* array, int tamanio)
+{
+	int retorno = -1;
+
+	for(int i=0;i<tamanio;i++)
+	{
+		imprimirDatosVivienda(array,tamanio, i);
+	}
+	printf("\n");
+	system("PAUSE");
+
+	return retorno;
+}
+*/
